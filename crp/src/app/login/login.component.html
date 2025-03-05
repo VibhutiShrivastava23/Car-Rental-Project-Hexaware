@@ -1,0 +1,31 @@
+
+<body>
+  <!-- // vibhuti shrivastava -->
+  <div class="login-container">
+    <div class="login-box">
+      <div class="login-header">
+        <h2>Login</h2>
+        <button mat-raised-button color="primary" (click)="goToSignUp()">
+          Sign Up
+        </button>
+      </div>
+      <form (ngSubmit)="login()">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="text" id="email" name="email" [(ngModel)]="email" required />
+        </div>
+  
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" [(ngModel)]="password" required />
+        </div>
+  
+        <button type="submit" class="login-btn">Login</button>
+      </form>
+    </div>
+    <div class="logo-box">
+      <img src="C:\angular\crp\public\roadready.jpg" alt="Car Rental Logo" class="logo">
+    </div>
+  </div>
+  
+</body>

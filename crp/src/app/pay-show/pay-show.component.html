@@ -1,0 +1,29 @@
+<p>pay-show works!</p>
+<!-- // vibhuti shrivastava -->
+<label for="filter">Filter Payment By :</label>
+<select [(ngModel)]="selectedFilter" (change)="onFilterChange()">
+  <option value="reservation">Reservation</option>
+
+</select>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" [(ngModel)]="filterValue" placeholder="Enter Reservation Id" />
+<button (click)="onFilterChange()">Search</button>
+<hr>
+<!-- ===================================================== -->
+<table mat-table [dataSource]="payment" class="mat-elevation-z8">
+    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+      <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+      <td mat-cell *matCellDef="let payment">
+        <span *ngIf="column === 'userId'">{{ payment.user?.userId }}</span>
+        <span *ngIf="column === 'resId'">{{ payment.reservation?.resId }}</span>
+        <span *ngIf="column !== 'userId' && column !== 'resId'">{{ payment[column] }}</span>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let payment; columns: displayedColumns"></tr>
+
+    
+  </table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+

@@ -1,0 +1,87 @@
+/* // vibhuti shrivastava */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #f3f7fb;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.1); 
+}
+body {
+    background-color: #cce2f0; 
+    font-family: Arial, sans-serif;
+}
+
+p {
+    text-align: center;
+    color: #0b6f70;
+}
+
+div {
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #05203c; 
+    border-radius: 4px;
+    font-size: 16px;
+    color: #1c1717;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    outline: none; 
+}
+
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #045a56; 
+    color: #fff; 
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #041c36; 
+}
+
+input[type="submit"]:disabled {
+    background-color: #cccccc; 
+    cursor: not-allowed;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #045a56;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0d0848; 
+}
+
+
+

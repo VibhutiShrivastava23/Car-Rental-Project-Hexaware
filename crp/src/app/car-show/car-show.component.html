@@ -1,0 +1,78 @@
+<p>car-show works!</p>
+<!-- // vibhuti shrivastava -->
+<div>
+    <label for="filter">Filter Car By:</label>
+    <select [(ngModel)]="selectedFilter" (change)="onFilterChange()">
+      <option value="category">Category</option>
+      <option value="availability">Availability</option>
+      <option value="fastag">Fastag</option>
+    </select>
+  
+    <input type="text" [(ngModel)]="filterValue" placeholder="Enter value" />
+    <button (click)="onFilterChange()">Search</button>
+<hr>
+<!-- =================================== -->
+
+<label for="filter">Update Car By:</label>
+<select [(ngModel)]="selectedFilters" name="filter" required>
+  <option value="availability">Availability</option>
+  <option value="price">Price</option>
+  <option value="fastag">Fastag</option>
+</select>
+
+<button (click)="onSubmit()">Update</button>
+
+<div *ngIf="selectedFilters === 'availability'">
+  <label for="carid">Enter Car ID:</label>
+  <input type="number" id="carid" name="carid" [(ngModel)]="this.carid" placeholder="Enter Car ID" required />
+
+  <label for="availability">Updated Value :</label>
+  <select id="availability" name="availability" [(ngModel)]="this.availability" required>
+    <option value="available">Available</option>
+    <option value="unavailable">Unavailable</option>
+  </select>
+</div>
+
+
+<div *ngIf="selectedFilters === 'price'">
+  <label for="carid">Enter Car Id:</label>
+  <input type="number" id="carid" name="carid" [(ngModel)]="this.carid" placeholder="Enter Car ID" required />
+
+  <label for="price">Updated Price:</label>
+  <input type="number" id="price" name="price" [(ngModel)]="this.price" placeholder="Enter Price" required />
+
+</div>
+    
+  
+      <div *ngIf="selectedFilters === 'fastag'">
+        <label for="carid">Enter Car ID:</label>
+        <input type="number" id="carid" name="carid" [(ngModel)]="this.carid" placeholder="Enter Car ID" required />
+      
+        <label for="fastag">Updated Value :</label>
+        <select id="fastag" name="fastag" [(ngModel)]="this.fastag" required>
+          <option value="available">Available</option>
+          <option value="unavailable">Unavailable</option>
+        </select>
+      </div>
+    
+<hr>
+<!-- ================================================== -->
+    <table mat-table [dataSource]="car" class="mat-elevation-z8">
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+          <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+          <td mat-cell *matCellDef="let car">{{ car[column] }}</td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let car; columns: displayedColumns"></tr>
+    
+        
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+  </div>
+  
+ 
+  
+  
+

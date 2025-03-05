@@ -1,0 +1,52 @@
+<p>car-add works!</p>
+<!-- // vibhuti shrivastava -->
+<form #carForm="ngForm" (ngSubmit)="add(carForm)">
+   
+    Make: 
+    <input type="text" name="make" 
+        [(ngModel)]="car.make" #make="ngModel" required /> <br/><br/>
+
+    Model: 
+    <input type="text" name="model" 
+        [(ngModel)]="car.model" #model="ngModel" required /> <br/><br/>
+
+    Year: 
+    <input type="number" name="year" 
+        [(ngModel)]="car.year" #year="ngModel" required /> <br/><br/>
+    
+    Location: 
+    <input type="text" name="location" 
+        [(ngModel)]="car.location" #location="ngModel" required /> <br/><br/>
+
+    Fastag: 
+    <select name="fastag" [(ngModel)]="car.fastag" #fastag="ngModel" required>
+        <option value="">Select Fastag Status</option>
+        <option value="available">Available</option>
+        <option value="unavailable">Unavailable</option>
+    </select> <br/><br/>
+
+    Price: 
+    <input type="number" name="price" 
+        [(ngModel)]="car.price" #price="ngModel" required /> <br/><br/>
+
+    Availability: 
+    <select name="availability" [(ngModel)]="car.availability" #availability="ngModel" required>
+        <option value="">Select Availability</option>
+        <option value="available">Available</option>
+        <option value="unavailable">Unavailable</option>
+    </select> <br/><br/>
+
+    Category: 
+    <input type="text" name="category" 
+        [(ngModel)]="car.category" #category="ngModel" required /> <br/><br/>
+
+    FuelType: 
+    <input type="text" name="fuelType" 
+        [(ngModel)]="car.fuelType" #fuelType="ngModel" required /> <br/><br/>
+
+    GearType: 
+    <input type="text" name="gearType" 
+        [(ngModel)]="car.gearType" #gearType="ngModel" required /> <br/><br/>
+
+    <input type="submit" value="Add" [disabled]="carForm.invalid" />
+</form>

@@ -1,0 +1,30 @@
+<p>cust-show works!</p>
+<!-- // vibhuti shrivastava -->
+<div>
+    <label for="filter">Update Customer Status:</label>
+    <br><br>
+    <label for="filter">Enter User Number/Id:</label>
+    
+    <input type="number" id="userId" name="userId" [(ngModel)]="userId" placeholder="Enter customer ID" required />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label for="status">Updated Value :</label>
+    <select id="status" name="status" [(ngModel)]="status" required>
+      <option value="Active">Active</option>
+      <option value="Deactive">Deactive</option>
+      </select>
+     
+      <button (click)="onSubmit()">Update</button>
+<hr>
+      <!-- =========================================================== -->
+    <table mat-table [dataSource]="customer" class="mat-elevation-z8">
+        <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+          <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
+          <td mat-cell *matCellDef="let customer">{{ customer[column] }}</td>
+        </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let customer; columns: displayedColumns"></tr>
+    
+      </table>
+       <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>

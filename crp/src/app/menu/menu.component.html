@@ -1,0 +1,29 @@
+<div class="menu">
+    <!-- // vibhuti shrivastava -->
+    <p>Admin Dashboard</p>
+     <button (click)="resetPage()">Reset</button> 
+     &nbsp;
+     <button (click)="logout()">Logout</button>
+    <hr />
+
+    <nav class="menu-links">
+        <button [routerLink]="['/menu',{outlets:{'hexa':['adminShow']}}]" routerLinkActive="active">Admin Details</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['carShow']}}]" routerLinkActive="active">Car Details</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['carAdd']}}]" routerLinkActive="active">Add New Car</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['carUpdate']}}]" routerLinkActive="active">Update Car Details</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['deleteCar']}}]" routerLinkActive="active">Delete Car</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['custShow']}}]" routerLinkActive="active">Customer Details</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['resShow']}}]" routerLinkActive="active">Reservation Details</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['payShow']}}]" routerLinkActive="active">Payment Details</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['reviewShow']}}]" routerLinkActive="active">Review By Customers</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['refundShow']}}]" routerLinkActive="active">Refund Details</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['revByCar']}}]" routerLinkActive="active">Generate Revenue By Car</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['revByDate']}}]" routerLinkActive="active">Generate Revenue By Date</button>
+        <button [routerLink]="['/menu',{outlets:{'hexa':['revByUser']}}]" routerLinkActive="active">Generate Revenue By Customer</button>
+    </nav>
+
+    <hr />
+
+    <hr />
+    <router-outlet name="hexa"></router-outlet>
+</div>

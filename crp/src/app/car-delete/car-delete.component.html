@@ -1,0 +1,6 @@
+<p>car-delete works!</p>
+<!-- // vibhuti shrivastava -->
+Car No: 
+<input type="number" name="carid" [(ngModel)]="carid" #carIdInput="ngModel" required /> <br/><br/>
+
+<input type="button" value="Delete" (click)="delete()" [disabled]="carIdInput.invalid || carid === null" />

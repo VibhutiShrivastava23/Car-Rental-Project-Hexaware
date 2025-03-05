@@ -1,0 +1,27 @@
+<p>revenue-by-date works!</p>
+<!-- // vibhuti shrivastava -->
+<div class="revenue-report-container">
+    <h2>Revenue Report by Date</h2>
+   
+    <div>
+      <label for="startDateInput">Start Date:</label>
+      <input type="date" [(ngModel)]="startDate" id="startDateInput" />
+    </div>
+    <br>
+    <div>
+      <label for="endDateInput">End Date:</label>
+      <input type="date" [(ngModel)]="endDate" id="endDateInput" />
+    </div>
+    <br>
+    <button (click)="fetchRevenueReport()">Get Revenue</button>
+    
+    <div *ngIf="revenue !== null">
+      <h3>Total Revenue:</h3>
+      <p>Rs. {{ revenue  }}</p>
+    </div>
+    
+    <div *ngIf="revenue === null">
+      <p>No revenue data available for the selected dates.</p>
+    </div>
+  </div>
+  

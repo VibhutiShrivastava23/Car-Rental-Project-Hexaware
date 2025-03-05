@@ -1,0 +1,52 @@
+<p>revenue-by-car works!</p>
+<!-- // vibhuti shrivastava -->
+<div class="revenue-container">
+    <h2>Get Revenue and Car Details</h2>
+  
+    <div>
+      <label for="carIdInput">Car ID:</label>
+      <input type="number" [(ngModel)]="carid" id="carIdInput" />
+      <button (click)="fetchRevenueAndCarDetails()">Get Details</button>
+    </div>
+    <!-- =============================== -->
+    <div *ngIf="car">
+        <h3>Car Details:</h3>
+        <table border="1" cellspacing="0" cellpadding="5" >
+          <tr>
+            <th style="padding: 10px;">Make</th>
+            <td style="padding: 10px;">{{ car.make }}</td>
+            <th style="padding: 10px;">Model</th>
+            <td style="padding: 10px;">{{ car.model }}</td>
+            <th style="padding: 10px;">Year</th>
+            <td style="padding: 10px;">{{ car.year }}</td>
+            <th style="padding: 10px;">Location</th>
+            <td style="padding: 10px;">{{ car.location }}</td>
+            <th style="padding: 10px;">Fastag</th>
+            <td style="padding: 10px;">{{ car.fastag }}</td>
+            <th style="padding: 10px;">Price</th>
+            <td style="padding: 10px;">{{ car.price }}</td>
+            <th style="padding: 10px;">Availability</th>
+            <td style="padding: 10px;">{{ car.availability }}</td>
+            <th style="padding: 10px;">Category</th>
+            <td style="padding: 10px;">{{ car.category }}</td>
+            <th style="padding: 10px;">Fuel Type</th>
+            <td style="padding: 10px;">{{ car.fuelType }}</td>
+            <th style="padding: 10px;">Gear Type</th>
+            <td style="padding: 10px;">{{ car.gearType }}</td>
+          </tr>
+        </table>
+      </div>
+ 
+    <h3>Total Revenue:</h3>
+    <div *ngIf="revenue !== null; else noRevenue">
+      
+      <p>Rs. {{ revenue  }}</p>
+    </div>
+  
+    <ng-template #noRevenue>
+      <p>No revenue data available.</p>
+    </ng-template>
+  </div>
+
+  
+  
